@@ -1,36 +1,30 @@
 import os
 from setuptools import find_packages, setup
 
-# Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+with open(os.path.join(os.path.dirname(__file__), '../README.md')) as readme:
+    README = readme.read()
+
+# allow setup.py to be run from any path
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-	#setup for whole app to start properly
-	python -m pip install --upgrade pip setuptools wheel
-	python3 -m venv venv
-	source venv/bin/activate
-	pip install Django
-	pip install djangorestframework
-	python manage.py makemigrations
-	python manage.py migrate
-
-    name='semstew',
+    name='SemStew',
     version='1.0',
-    description='Serves as a template for restaurant web pages',
+    packages=find_packages(),
+    description='Template for restaurant web pages',
     license='MIT licence',
     url='https://github.com/SemStew/CMS_Django_B181',
-	scripts=['manage.py'],
-	classifiers=[
+    scripts=['manage.py'],
+    classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 2.1',  
+        'Framework :: Django :: 2.1.4',  
         'Intended Audience :: Developers',
         'License :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3.6',
-		'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
