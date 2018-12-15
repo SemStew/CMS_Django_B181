@@ -22,6 +22,7 @@ SemStew is a REST web application. It serves as a template for any restaurant, s
 
    - `pip install Django`
    - `pip install djangorestframework`
+   - OR USE `.\setup.py install`
 
 6. Make database tables by:
 
@@ -31,3 +32,4 @@ SemStew is a REST web application. It serves as a template for any restaurant, s
 
    - `python manage.py createsuperuser`
    - follow instructions
+
