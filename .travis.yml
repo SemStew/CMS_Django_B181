@@ -32,7 +32,7 @@ before_install:
 
 install:
 
-  - .\SemStew\setup.py install
+  - python ./SemStew/setup.py install
 
 
 
@@ -44,4 +44,4 @@ before_script:
 
 script:
 
-  - python manage.py syncdb --noinput
+  - python ./SemStew/manage.py syncdb --noinput
