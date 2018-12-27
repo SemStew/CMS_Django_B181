@@ -7,5 +7,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^semstew/', include('semstew.urls')),
+    url(r'^$', include('semstew.urls')),
 ]
