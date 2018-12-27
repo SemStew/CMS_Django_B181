@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% load staticfiles %}
+
+    <!-- Title -->
+    <title>SemStew -  | Home</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'semstew/images/favicon.ico' %}">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'semstew/style.css' %}">
+
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header-area">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-between">
+                    <!-- Breaking News -->
+                    <div class="col-12 col-sm-6">
+                        <div class="breaking-news">
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    <li><a href="#">Hello World!</a></li>
+                                    <li><a href="#">SemStew</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Social Info -->
+                    <div class="col-12 col-sm-6">
+                        <div class="top-social-info text-right">
+                            <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="deliciousNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="index.html"><img src="{% static 'semstew/images/logo.png' %}" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                                    <li>
+                                        <a href="#">Restaurants</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Štefánikova 52</a></li>
+                                            <li><a href="#">Sejfertova 67</a></li>
+                                            <li><a href="#">Rumunská 25</a></li>
+                                            <li><a href="#">Šmeralova 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Offer</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Lunch menu</a></li>
+                                            <li><a href="#">Beverages</a></li>
+                                            <li><a href="#">Meals</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Delivery</a></li>
+                                    <li><a href="#">Reservation</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li>
+                                        <a href="#">Language</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Czech</a></li>
+                                            <li><a href="#">English</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ##### Content Area Start-->
+    {% block content %}
+
+    {% endblock %}
+    <!-- ##### Content Area END-->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
+                    <!-- Footer Logo -->
+                    <div class="footer-logo">
+                        <a href="index.html"><img src="{% static 'semstew/images/logo.png' %}" alt=""></a>
+                    </div>
+                    <!-- Copywrite -->
+                    <p>
+                        Copyright &copy; 2018 All rights reserved | This template is made with SemStew CMS by DreamTeam <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'semstew/js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'semstew/js/bootstrap/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'semstew/js/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'semstew/js/plugins/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'semstew/js/active.js' %}"></script>
+</body>
+</html>
