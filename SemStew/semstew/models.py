@@ -48,7 +48,7 @@ class Category(models.Model):
     """
         This class represents a category of product, which can also be a subcategory.
     """
-    parent_category = models.ForeignKey('self', blank=True,  on_delete=models.CASCADE)
+    parent_category = models.ForeignKey('self', blank=True,  on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return 'Category ' + str(self.pk)
@@ -171,7 +171,7 @@ class Item(models.Model):
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, blank=True)
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
     image = models.FileField(blank=True)
-    amount = models.IntegerField()
+    amount = models.FloatField()
 
     def __str__(self):
         return 'Item ' + str(self.pk)
@@ -184,7 +184,7 @@ class ItemName(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
     price = models.IntegerField()
     name = models.CharField(max_length=256)
-    description = models.TextField()
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
@@ -271,8 +271,8 @@ class ContactConfig(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
     header = models.CharField(max_length=128)
     description_text = models.CharField(max_length=128)
-    image_map = models.FileField()
-    image_restaurant = models.FileField()
+    image_map = models.FileField(blank=True)
+    image_restaurant = models.FileField(blank=True)
 
     def __str__(self):
         return self.header
