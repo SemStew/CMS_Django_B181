@@ -1,18 +1,37 @@
-language: java
-jdk: oraclejdk8
-install: true
-services:
-  - postgresql
+#   A basic travis.yml boilerplate for Django projects
+
+
+
+language: python
+
+
+
+python:
+  
+  - 3.7
+
+services: 
+
+  - sqlite
+
+env:
+
+  - DJANGO=2.1.4 DB=sqlite
+
+before_install:
+
+  - cd SemStew
+
+install:
+
+  - python setup.py install
+  - python manage.py migrate
+
 before_script:
-  - psql -c 'CREATE DATABASE "SemStew";' -U postgres
-  - psql -U postgres --list
-  - psql -d SemStew -f database/create_SemStew_Database.sql -U postgres
-  - psql -d SemStew -f database/insert_SemStew_Database.sql -U postgres
-  - psql -d SemStew -c "\dt+"
-  - psql -c "ALTER USER postgres WITH PASSWORD 'postolka11';" -U postgres
-script: 
-- cd semstew
-- mvn clean install
-cache:
-  directories:
-  - $HOME/.m2
+
+  - cd SemStew
+
+script:
+
+  - python manage.py syncdb --noinput
+  - python manage.py test
