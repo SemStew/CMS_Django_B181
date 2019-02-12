@@ -6,6 +6,7 @@ class Language(models.Model):
         This class represents a model of a language.
     """
     name = models.CharField(max_length=64)
+    header = models.CharField(max_length=64, blank=True)
 
     def __str__(self):
         return self.name
