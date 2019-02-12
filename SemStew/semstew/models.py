@@ -6,6 +6,7 @@ class Language(models.Model):
         This class represents a model of a language.
     """
     name = models.CharField(max_length=64)
+    header = models.CharField(max_length=64, blank=True)
 
     def __str__(self):
         return self.name
@@ -97,6 +98,20 @@ class Order(models.Model):
 
     def __str__(self):
         return self.person + ' - ' + str(self.date_time)
+
+class OrderConfig(models.Model):
+    """
+        This class contains keywords for orders
+    """
+    language = models.ForeignKey(Language, on_delete=models.CASCADE)
+    header_more = models.CharField(max_length=128, blank=True)
+    header = models.CharField(max_length=128)
+    person = models.CharField(max_length=128)
+    address = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.header_more
+
 
 class Reservation(models.Model):
     """
@@ -330,3 +345,4 @@ class Intro(models.Model):
 
     def __str__(self):
         return self.intro_config.header
+
