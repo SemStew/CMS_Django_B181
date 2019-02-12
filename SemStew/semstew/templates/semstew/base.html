@@ -84,7 +84,7 @@
                                     <li class="active"><a href="{% url 'semstew:index' %}">Home</a></li>
                                     <li>
                                         <a href="{% url 'semstew:branches' %}">Restaurants</a>
-                                        <ul class="dropdown">
+                                        <ul class="dropdown" id="dd1">
                                             {% for branch in branches %}
                                             <li><a href="#">{{ branch.address }}</a></li>
                                             {% endfor %}
@@ -104,9 +104,9 @@
                                     <li><a href="{% url 'semstew:contact' %}">Contact</a></li>
                                     <li>
                                         <a href="#">Language</a>
-                                        <ul class="dropdown">
+                                        <ul class="dropdown" id="dd1">
                                             {% for lang in langs %}
-                                            <li><a href="#">{{ lang.name }}</a></li>
+                                            <li><a href="../aboutus/{{ lang.pk }}">{{ lang.name }}</a></li>
                                             {% endfor %}
                                         </ul>
                                     </li>
@@ -155,5 +155,6 @@
     <script src="{% static 'js/plugins/plugins.js' %}"></script>
     <!-- Active js -->
     <script src="{% static 'js/active.js' %}"></script>
+
 </body>
 </html>
