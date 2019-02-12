@@ -32,4 +32,8 @@ SemStew is a REST web application. It serves as a template for any restaurant, s
 
    - `python manage.py createsuperuser`
    - follow instructions
+   
+8. Load prepared data for database:
+
+   - `python manage.py loaddata db.json`
 

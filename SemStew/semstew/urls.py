@@ -1,14 +1,16 @@
-from django.conf.urls import url
+from django.conf.urls import include, url
+from django.conf import settings
+from django.urls import path
 from . import views
 
 app_name = 'semstew'
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    path('', views.index, name='index'),
     url(r'^branches/', views.branches, name='branches'),
     url(r'^offer/', views.offer, name='offer'),
     url(r'^delivery/', views.delivery, name='delivery'),
     url(r'^reservation/', views.reservation, name='reservation'),
-    url(r'^aboutus/', views.aboutus, name='aboutus'),
+    path('aboutus/<int:language_id>', views.about_us, name='about_us'),
     url(r'^contact/', views.contact, name='contact'),
 ]

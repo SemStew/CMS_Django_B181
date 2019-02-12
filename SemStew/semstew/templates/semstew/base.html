@@ -84,11 +84,10 @@
                                     <li class="active"><a href="{% url 'semstew:index' %}">Home</a></li>
                                     <li>
                                         <a href="{% url 'semstew:branches' %}">Restaurants</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Štefánikova 52</a></li>
-                                            <li><a href="#">Sejfertova 67</a></li>
-                                            <li><a href="#">Rumunská 25</a></li>
-                                            <li><a href="#">Šmeralova 3</a></li>
+                                        <ul class="dropdown" id="dd1">
+                                            {% for branch in branches %}
+                                            <li><a href="#">{{ branch.address }}</a></li>
+                                            {% endfor %}
                                         </ul>
                                     </li>
                                     <li>
@@ -101,13 +100,14 @@
                                     </li>
                                     <li><a href="{% url 'semstew:delivery' %}">Delivery</a></li>
                                     <li><a href="{% url 'semstew:reservation' %}">Reservation</a></li>
-                                    <li><a href="{% url 'semstew:aboutus' %}">About Us</a></li>
+                                    <li><a href="{% url 'semstew:about_us' 2 %}">About Us</a></li>
                                     <li><a href="{% url 'semstew:contact' %}">Contact</a></li>
                                     <li>
                                         <a href="#">Language</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Czech</a></li>
-                                            <li><a href="#">English</a></li>
+                                        <ul class="dropdown" id="dd1">
+                                            {% for lang in langs %}
+                                            <li><a href="../aboutus/{{ lang.pk }}">{{ lang.name }}</a></li>
+                                            {% endfor %}
                                         </ul>
                                     </li>
                                 </ul>
