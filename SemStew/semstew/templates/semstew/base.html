@@ -84,7 +84,7 @@
                                     <li class="active"><a href="{% url 'semstew:index' %}">Home</a></li>
                                     <li>
                                         <a href="{% url 'semstew:branches' %}">Restaurants</a>
-                                        <ul class="dropdown" id="dd1">
+                                        <ul class="dropdown">
                                             {% for branch in branches %}
                                             <li><a href="#">{{ branch.address }}</a></li>
                                             {% endfor %}
@@ -93,20 +93,22 @@
                                     <li>
                                         <a href="{% url 'semstew:offer' %}">Offer</a>
                                         <ul class="dropdown">
-                                            <li><a href="#">Lunch menu</a></li>
-                                            <li><a href="#">Beverages</a></li>
-                                            <li><a href="#">Meals</a></li>
+                                            {% for menu in menus %}
+                                            {% if menu.language_id == selected_lang %}
+                                            <li><a href="#">{{ menu.name }}</a></li>
+                                            {% endif %}
+                                            {% endfor %}
                                         </ul>
                                     </li>
                                     <li><a href="{% url 'semstew:delivery' %}">Delivery</a></li>
                                     <li><a href="{% url 'semstew:reservation' %}">Reservation</a></li>
-                                    <li><a href="{% url 'semstew:about_us' 2 %}">About Us</a></li>
+                                    <li><a href="{% url 'semstew:about_us' selected_lang %}">About Us</a></li>
                                     <li><a href="{% url 'semstew:contact' %}">Contact</a></li>
                                     <li>
                                         <a href="#">Language</a>
-                                        <ul class="dropdown" id="dd1">
+                                        <ul class="dropdown">
                                             {% for lang in langs %}
-                                            <li><a href="../aboutus/{{ lang.pk }}">{{ lang.name }}</a></li>
+                                            <li><a href="{% url 'semstew:about_us' lang.id %}" value="{{lang.id}}"> {{ lang.name }}</a></li>
                                             {% endfor %}
                                         </ul>
                                     </li>

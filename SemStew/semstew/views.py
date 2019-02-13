@@ -20,7 +20,6 @@ def branches (request):
 
 
 def offer (request):
-    template = loader.get_template('../templates/semstew/offer.html')
     context = {
         # Everything what is need from DB to HTML
     }
@@ -28,7 +27,7 @@ def offer (request):
 
 
 def delivery (request):
-    template = loader.get_template('../templates/semstew/delivery.html')
+
     context = {
         # Everything what is need from DB to HTML
     }
