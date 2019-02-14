@@ -4,14 +4,19 @@ from semstew.models import *
 
 
 def index (request):
-    template = loader.get_template('../templates/semstew/index.html')
+    langs = Language.objects.all()
+    if 'lang' in request.GET:
+        selected_= request.GET['lang']
+    else:
+        selected = 3
     context = {
-        # Everything what is need from DB to HTML
+        'langs': langs,
+        'selected_lang': selected
     }
-    return render(request, '../templates/semstew/index.html', context)
+    return render(request, 'semstew/index.html', context)
 
 
-def branches (request):
+def branches (request, language_id):
     template = loader.get_template('../templates/semstew/branches.html')
     context = {
         # Everything what is need from DB to HTML
@@ -19,14 +24,14 @@ def branches (request):
     return render(request, '../templates/semstew/branches.html', context)
 
 
-def offer (request):
+def offer (request, language_id):
     context = {
         # Everything what is need from DB to HTML
     }
     return render(request, '../templates/semstew/offer.html', context)
 
 
-def delivery (request):
+def delivery (request, language_id):
 
     context = {
         # Everything what is need from DB to HTML
@@ -34,7 +39,7 @@ def delivery (request):
     return render(request, '../templates/semstew/delivery.html', context)
 
 
-def reservation (request):
+def reservation (request, language_id):
     template = loader.get_template('../templates/semstew/reservation.html')
     context = {
         # Everything what is need from DB to HTML
@@ -52,7 +57,7 @@ def about_us(request, language_id):
     return render(request, 'semstew/aboutus.html', context)
 
 
-def contact (request):
+def contact (request, language_id):
     template = loader.get_template('../templates/semstew/contact.html')
     context = {
         # Everything what is need from DB to HTML
