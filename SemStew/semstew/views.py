@@ -15,13 +15,13 @@ def index (request):
     }
     return render(request, 'semstew/index.html', context)
 
-
+  
 def branches (request, language_id):
-    template = loader.get_template('../templates/semstew/branches.html')
     context = {
         # Everything what is need from DB to HTML
     }
     return render(request, '../templates/semstew/branches.html', context)
+
 
 
 def offer (request, language_id):
@@ -30,14 +30,11 @@ def offer (request, language_id):
     }
     return render(request, '../templates/semstew/offer.html', context)
 
-
 def delivery (request, language_id):
-
     context = {
         # Everything what is need from DB to HTML
     }
     return render(request, '../templates/semstew/delivery.html', context)
-
 
 def reservation (request, language_id):
     template = loader.get_template('../templates/semstew/reservation.html')
