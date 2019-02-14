@@ -4,11 +4,11 @@
 
 {% block content %}
     <!-- ##### Reservation Form Area Start ##### -->
-    <div class="contact-area section-padding-0-80">
+    <div class="contact-area section-padding-0-80" itemscope itemtype="https://schema.org/Order">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading">
+                    <div class="section-heading" itemprop="name">
                         <h3>Order</h3>
                         <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin malesuada et mauris ut lobortis. Sed eu iaculis sapien, eget luctus quam. Aenean hendrerit varius massa quis laoreet. Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
                     </div>
@@ -20,32 +20,32 @@
                     <div class="contact-form-area">
                         <form action="#" method="post">
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12" itemprop="Person" content="name">
                                     <input type="text" class="form-control" id="name" placeholder="Name">
                                 </div>
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-lg-6" itemprop="dateCreated">
                                     <input type="date" class="form-control" id="date" placeholder="Date">
                                 </div>
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-lg-6" itemprop="bookingTime">
                                     <input type="time" class="form-control" id="time" placeholder="Time">
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12" itemprop="Person" content="address">
                                     <textarea name="address" class="form-control" id="address" cols="30" rows="10" placeholder="Address"></textarea>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12" itemprop="Person" content="telephone">
                                     <label name="order-items" class="form-control" id="order-items" cols="30" rows="10" placeholder="Items of order">Items of order</label>
                                 </div>
-                                <div class="col-12 col-lg-3">
+                                <div class="col-12 col-lg-3" itemprop="orderItemNumber">
                                     <select name="category" id="category">
                                         <option value="1">Menu</option>
                                     </select>
                                 </div>
                                 <div class="col-12 col-lg-3">
-                                    <select name="item" id="item">
+                                    <select name="item" id="item" itemprop="orderItem">
                                         <option value="1">Item of category</option>
                                     </select>
                                 </div>
-                                <div class="col-12 col-lg-3">
+                                <div class="col-12 col-lg-3" itemprop="orderQuantity">
                                     <input type="number" class="form-control" id="number" placeholder="Number of items">
                                 </div>
                                 <div class="col-12 col-lg-3 text-center">

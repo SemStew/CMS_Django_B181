@@ -8,24 +8,23 @@
         <div class="container">
             <div class="row">
                 <!-- ********** Progress Bars & Accordions ********** -->
-                <div class="col-12">
-                    <div class="elements-title mb-80">
+                <div class="col-12" itemscope itemtype="https://schema.org/Menu">
+                    <div class="elements-title mb-80" itemprop="Menu">
                         <h2>Food</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <!-- ##### Accordians ##### -->
-                <div class="col-12 col-lg-6">
-                    <div class="accordions mb-80" id="accordion" role="tablist" aria-multiselectable="true">
-
+                <div class="col-12 col-lg-6" itemprop="MenuSection">
+                    <div class="accordions mb-80" id="accordion" role="tablist" aria-multiselectable="true" itemprop="MenuItem">
                         <!-- Single Accordian Area -->
-                        <div class="panel single-accordion">
+                        <div class="panel single-accordion" itemprop="Name">
                             <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Název jídla
                                     <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                     </a></h6>
-                            <div id="collapseOne" class="accordion-content collapse show">
+                            <div id="collapseOne" class="accordion-content collapse show" itemprop="description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate id justo quis facilisis.</p>
                             </div>
                         </div>
@@ -34,16 +33,16 @@
 
                 <!-- ##### Tabs ##### -->
                 <div class="col-12 col-lg-6">
-                    <div class="delicious-tabs-content">
+                    <div class="delicious-tabs-content" itemprop="NutritionInformation">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link" id="tab--1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false">Alergens</a>
+                                <a class="nav-link" id="tab--1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false"><span itemprop="alergens">Alergens</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="tab--2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Gramáž</a>
+                                <a class="nav-link" id="tab--2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false"><span itemprop="calories">Gramáž</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" id="tab--3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="true">Cena</a>
+                                <a class="nav-link active" id="tab--3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="true"><span itemprop="price">Cena</span></a>
                             </li>
                         </ul>
 
@@ -51,13 +50,13 @@
                             <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab--1">
                                 <div class="delicious-tab-content">
                                     <!-- Tab Text -->
-                                    <div class="delicious-tab-text">
+                                    <div class="delicious-tab-text" itemprop="alergens">
                                         <p>Integer nec bibendum lacus. Praesent malesuada congue, Suspendisse dictum enim sit amet libero malesu ada feugiat. Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Praesent malesuada congue.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade show active" id="tab2" role="tabpanel" aria-labelledby="tab--2">
-                                <div class="delicious-tab-content">
+                                <div class="delicious-tab-content" itemprop="calories">
                                     <!-- Tab Text -->
                                     <div class="delicious-tab-text">
                                         <p>Integer nec bibendum lacus. Praesent malesuada congue, Suspendisse dictum enim sit amet libero malesu ada feugiat. Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Praesent malesuada congue.</p>
@@ -67,7 +66,7 @@
                             <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab--3">
                                 <div class="delicious-tab-content">
                                     <!-- Tab Text -->
-                                    <div class="delicious-tab-text">
+                                    <div class="delicious-tab-text" itemprop="price">
                                         <p>Integer nec bibendum lacus. Praesent malesuada congue, Suspendisse dictum enim sit amet libero malesu ada feugiat. Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Praesent malesuada congue.</p>
                                     </div>
                                 </div>
