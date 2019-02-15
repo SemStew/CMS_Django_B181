@@ -6,11 +6,12 @@
     <!-- ##### Elements Area Start ##### -->
     <section class="elements-area section-padding-80-0">
         <div class="container">
+            {% for i in categories %}
             <div class="row">
                 <!-- ********** Progress Bars & Accordions ********** -->
                 <div class="col-12" itemscope itemtype="https://schema.org/Menu">
                     <div class="elements-title mb-80" itemprop="Menu">
-                        <h2>Food</h2>
+                        <h2>{{ i.name }}</h2>
                     </div>
                 </div>
             </div>
@@ -75,6 +76,7 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </section>
     <!-- ***** Elements Area End ***** -->

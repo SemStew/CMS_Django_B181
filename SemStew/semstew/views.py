@@ -8,7 +8,7 @@ def index (request):
     if 'lang' in request.GET:
         selected_= request.GET['lang']
     else:
-        selected = 3
+        selected = 2
     context = {
         'langs': langs,
         'selected_lang': selected
@@ -25,8 +25,12 @@ def branches (request, language_id):
 
 
 def offer (request, language_id):
+    categories = Category.objects.raw('SELECT * FROM semstew_categoryname JOIN semstew_category ON ' +
+                                           'semstew_categoryname.category_id = semstew_category.id ' +
+                                           'WHERE parent_category_id IS NOT NULL AND language_id=' + str(language_id))
     context = {
-        # Everything what is need from DB to HTML
+        'categories': categories,
+        'lang': language_id
     }
     return render(request, '../templates/semstew/offer.html', context)
 
